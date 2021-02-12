@@ -65,8 +65,8 @@ printf "[OK]\e[0m\n"
 
 # Extend fs
 printf "\e[32mExtend the fs... "
-e2fsck -fp $2"p1" > /dev/null
-resize2fs $2"p1" > /dev/null
+e2fsck -fp $2"1" > /dev/null
+resize2fs $2"1" > /dev/null
 sync
 printf "[OK]\e[0m\n"
 

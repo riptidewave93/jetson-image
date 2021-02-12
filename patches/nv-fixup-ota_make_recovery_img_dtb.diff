@@ -1,0 +1,86 @@
+55c55
+< 	_librariesdir="$(find "${_rootfs_dir}/lib" -name libc.so.6 | tail -1 | awk -F/ '{ print $(NF-1) }')"
+---
+> 	_librariesdir="aarch64-linux-gnu"
+59a60
+> 		-e "s|<LIBVER>|2.31|g" \
+84,86c85,87
+< 	rm -f ld-linux-aarch64.so.1 aarch64-linux-gnu/ld-2.23.so
+< 	ln -s aarch64-linux-gnu/ld-2.27.so ld-linux-aarch64.so.1
+< 	check_error "ln -s aarch64-linux-gnu/ld-2.27.so ld-linux-aarch64.so.1"
+---
+> 	#rm -f ld-linux-aarch64.so.1 aarch64-linux-gnu/ld-2.23.so
+> 	#ln -s aarch64-linux-gnu/ld-2.27.so ld-linux-aarch64.so.1
+> 	#check_error "ln -s aarch64-linux-gnu/ld-2.27.so ld-linux-aarch64.so.1"
+89,123c90,124
+< 	rm -f libc.so.6 libc-2.23.so
+< 	ln -s libc-2.27.so libc.so.6
+< 	check_error "ln -s libc-2.27.so libc.so.6"
+< 
+< 	rm -f libdl.so.2 libdl-2.23.so
+< 	ln -s libdl-2.27.so libdl.so.2
+< 	check_error "ln -s libdl-2.27.so libdl.so.2"
+< 
+< 	rm -f libm.so.6 libm-2.23.so
+< 	ln -s libm-2.27.so libm.so.6
+< 	check_error "ln -s libm-2.27.so libm.so.6"
+< 
+< 	rm -f libnsl.so.1 libnsl-2.23.so
+< 	ln -s libnsl-2.27.so libnsl.so.1
+< 	check_error "ln -s libnsl-2.27.so libnsl.so.1"
+< 
+< 	rm -f libnss_files.so.2 libnss_files-2.23.so
+< 	ln -s libnss_files-2.27.so libnss_files.so.2
+< 	check_error "ln -s libnss_files-2.27.so libnss_files.so.2"
+< 
+< 	rm -f libnss_nis.so.2 libnss_nis-2.23.so
+< 	ln -s libnss_nis-2.27.so libnss_nis.so.2
+< 	check_error "ln -s libnss_nis-2.27.so libnss_nis.so.2"
+< 
+< 	rm -f libpthread.so.0 libpthread-2.23.so
+< 	ln -s libpthread-2.27.so libpthread.so.0
+< 	check_error "ln -s libpthread-2.27.so libpthread.so.0"
+< 
+< 	rm -f libresolv.so.2 libresolv-2.23.so
+< 	ln -s libresolv-2.27.so libresolv.so.2
+< 	check_error "ln -s libresolv-2.27.so libresolv.so.2"
+< 
+< 	rm -f librt.so.1 librt-2.23.so
+< 	ln -s librt-2.27.so librt.so.1
+< 	check_error "ln -s librt-2.27.so librt.so.1"
+---
+> 	#rm -f libc.so.6 libc-2.23.so
+> 	#ln -s libc-2.27.so libc.so.6
+> 	#check_error "ln -s libc-2.27.so libc.so.6"
+> 
+> 	#rm -f libdl.so.2 libdl-2.23.so
+> 	#ln -s libdl-2.27.so libdl.so.2
+> 	#check_error "ln -s libdl-2.27.so libdl.so.2"
+> 
+> 	#rm -f libm.so.6 libm-2.23.so
+> 	#ln -s libm-2.27.so libm.so.6
+> 	#check_error "ln -s libm-2.27.so libm.so.6"
+> 
+> 	#rm -f libnsl.so.1 libnsl-2.23.so
+> 	#ln -s libnsl-2.27.so libnsl.so.1
+> 	#check_error "ln -s libnsl-2.27.so libnsl.so.1"
+> 
+> 	#rm -f libnss_files.so.2 libnss_files-2.23.so
+> 	#ln -s libnss_files-2.27.so libnss_files.so.2
+> 	#check_error "ln -s libnss_files-2.27.so libnss_files.so.2"
+> 
+> 	#rm -f libnss_nis.so.2 libnss_nis-2.23.so
+> 	#ln -s libnss_nis-2.27.so libnss_nis.so.2
+> 	#check_error "ln -s libnss_nis-2.27.so libnss_nis.so.2"
+> 
+> 	#rm -f libpthread.so.0 libpthread-2.23.so
+> 	#ln -s libpthread-2.27.so libpthread.so.0
+> 	#check_error "ln -s libpthread-2.27.so libpthread.so.0"
+> 
+> 	#rm -f libresolv.so.2 libresolv-2.23.so
+> 	#ln -s libresolv-2.27.so libresolv.so.2
+> 	#check_error "ln -s libresolv-2.27.so libresolv.so.2"
+> 
+> 	#rm -f librt.so.1 librt-2.23.so
+> 	#ln -s librt-2.27.so librt.so.1
+> 	#check_error "ln -s librt-2.27.so librt.so.1"

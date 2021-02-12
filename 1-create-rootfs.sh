@@ -22,13 +22,13 @@ if [ ! $JETSON_ROOTFS_DIR ]; then
 fi
 
 # Install prerequisites packages
-printf "\e[32mInstall the dependencies...  "
+printf "\e[32mInstall the dependencies...     "
 apt-get update > /dev/null
-apt-get install --no-install-recommends -y qemu-user-static debootstrap binfmt-support coreutils parted wget gdisk e2fsprogs > /dev/null
+apt-get install --no-install-recommends -y qemu-user-static debootstrap binfmt-support coreutils parted wget gdisk e2fsprogs ansible > /dev/null
 printf "[OK]\n"
 
 # Create rootfs directory
-printf "Create rootfs directory...    "
+printf "Create rootfs directory...      "
 mkdir -p $JETSON_ROOTFS_DIR
 printf "[OK]\n"
 
@@ -48,6 +48,12 @@ cp /usr/bin/qemu-aarch64-static $JETSON_ROOTFS_DIR/usr/bin
 # Run debootstrap second stage
 printf "Run debootstrap second stage... "
 chroot $JETSON_ROOTFS_DIR /bin/bash -c "/debootstrap/debootstrap --second-stage" > /dev/null
+printf "[OK]\n"
+
+# Kick off ansible on the rootfs
+printf "Run ansible against rootfs...   "
+cd $JETSON_REPO_DIR/ansible
+$(which ansible-playbook) jetson.yaml > /dev/null
 printf "[OK]\n"
 
 printf "Success!\n"

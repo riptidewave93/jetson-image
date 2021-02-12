@@ -1,0 +1,32 @@
+136,145c136,145
+< R32x:<ROOTFS>/lib/<ARCH>/ld-2.27.so:/lib/<ARCH>/ld-2.27.so
+< R32x:<ROOTFS>/lib/<ARCH>/libc-2.27.so:/lib/<ARCH>/libc-2.27.so
+< R32x:<ROOTFS>/lib/<ARCH>/libdl-2.27.so:/lib/<ARCH>/libdl-2.27.so
+< R32x:<ROOTFS>/lib/<ARCH>/libm-2.27.so:/lib/<ARCH>/libm-2.27.so
+< R32x:<ROOTFS>/lib/<ARCH>/libnsl-2.27.so:/lib/<ARCH>/libnsl-2.27.so
+< R32x:<ROOTFS>/lib/<ARCH>/libnss_files-2.27.so:/lib/<ARCH>/libnss_files-2.27.so
+< R32x:<ROOTFS>/lib/<ARCH>/libnss_nis-2.27.so:/lib/<ARCH>/libnss_nis-2.27.so
+< R32x:<ROOTFS>/lib/<ARCH>/libpthread-2.27.so:/lib/<ARCH>/libpthread-2.27.so
+< R32x:<ROOTFS>/lib/<ARCH>/libresolv-2.27.so:/lib/<ARCH>/libresolv-2.27.so
+< R32x:<ROOTFS>/lib/<ARCH>/librt-2.27.so:/lib/<ARCH>/librt-2.27.so
+---
+> R32x:<ROOTFS>/lib/<ARCH>/ld-<LIBVER>.so:/lib/<ARCH>/ld-<LIBVER>.so
+> R32x:<ROOTFS>/lib/<ARCH>/libc-<LIBVER>.so:/lib/<ARCH>/libc-<LIBVER>.so
+> R32x:<ROOTFS>/lib/<ARCH>/libdl-<LIBVER>.so:/lib/<ARCH>/libdl-<LIBVER>.so
+> R32x:<ROOTFS>/lib/<ARCH>/libm-<LIBVER>.so:/lib/<ARCH>/libm-<LIBVER>.so
+> R32x:<ROOTFS>/lib/<ARCH>/libnsl-<LIBVER>.so:/lib/<ARCH>/libnsl-<LIBVER>.so
+> R32x:<ROOTFS>/lib/<ARCH>/libnss_files-<LIBVER>.so:/lib/<ARCH>/libnss_files-<LIBVER>.so
+> R32x:<ROOTFS>/lib/<ARCH>/libnss_nis-<LIBVER>.so:/lib/<ARCH>/libnss_nis-<LIBVER>.so
+> R32x:<ROOTFS>/lib/<ARCH>/libpthread-<LIBVER>.so:/lib/<ARCH>/libpthread-<LIBVER>.so
+> R32x:<ROOTFS>/lib/<ARCH>/libresolv-<LIBVER>.so:/lib/<ARCH>/libresolv-<LIBVER>.so
+> R32x:<ROOTFS>/lib/<ARCH>/librt-<LIBVER>.so:/lib/<ARCH>/librt-<LIBVER>.so
+159c159
+< R32x:<ROOTFS>/lib/<ARCH>/libprocps.so.6:/lib/<ARCH>/libprocps.so.6
+---
+> R32x:<ROOTFS>/lib/<ARCH>/libprocps.so.8:/lib/<ARCH>/libprocps.so.8
+165c165
+< R32x:<ROOTFS>/lib/<ARCH>/libreadline.so.7:/lib/libreadline.so.7
+---
+> R32x:<ROOTFS>/lib/<ARCH>/libreadline.so.8:/lib/libreadline.so.8
+180d179
+< R32x:<ROOTFS>/usr/lib/<ARCH>/libcrypto.so.1.0.0:/lib/<ARCH>/libcrypto.so.1.0.0
