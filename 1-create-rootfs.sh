@@ -21,6 +21,12 @@ if [ ! $JETSON_ROOTFS_DIR ]; then
 	exit 1
 fi
 
+# If root dir already exists, exit out
+if [ -d "$JETSON_ROOTFS_DIR" ]; then
+	printf "ERROR: root dir already exists at $JETSON_ROOTFS_DIR! Exiting..."
+	exit 1
+fi
+
 # Install prerequisites packages
 printf "\e[32mInstall the dependencies...     "
 apt-get update > /dev/null

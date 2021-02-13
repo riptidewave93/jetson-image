@@ -26,7 +26,11 @@ if [ ! "$(ls -A $JETSON_ROOTFS_DIR)" ]; then
 	exit 1
 fi
 
-printf "\e[32mBuild the image ...\n"
+# If any of our dirs already exist, exit out
+if [ -d "$JETSON_BUILD_DIR" ]; then
+	printf "ERROR: build directory already exists at $JETSON_BUILD_DIR! Exiting..."
+	exit 1
+fi
 
 # Create the build dir if it does not exists
 mkdir -p $JETSON_BUILD_DIR
@@ -63,13 +67,14 @@ if [ -c "$JETSON_BUILD_DIR/Linux_for_Tegra/rootfs/dev/urandom" ]; then
 fi
 
 # Apply our patches
-patch $JETSON_BUILD_DIR/Linux_for_Tegra/nv_tegra/nv-apply-debs.sh < patches/nv-apply-debs.diff
-patch $JETSON_BUILD_DIR/Linux_for_Tegra/tools/ota_tools/version_upgrade/ota_make_recovery_img_dtb.sh < patches/nv-fixup-ota_make_recovery_img_dtb.diff
-patch $JETSON_BUILD_DIR/Linux_for_Tegra/tools/ota_tools/version_upgrade/recovery_copy_binlist.txt < patches/nv-recovery-copy-binlist.diff
-
+printf "Apply L4T Patches... "
+patch $JETSON_BUILD_DIR/Linux_for_Tegra/nv_tegra/nv-apply-debs.sh < patches/nv-apply-debs.diff > /dev/null
+patch $JETSON_BUILD_DIR/Linux_for_Tegra/tools/ota_tools/version_upgrade/ota_make_recovery_img_dtb.sh < patches/nv-fixup-ota_make_recovery_img_dtb.diff > /dev/null
+patch $JETSON_BUILD_DIR/Linux_for_Tegra/tools/ota_tools/version_upgrade/recovery_copy_binlist.txt < patches/nv-recovery-copy-binlist.diff > /dev/null
+printf "[OK]\n"
 pushd $JETSON_BUILD_DIR/Linux_for_Tegra/ > /dev/null
 
-printf "Extract L4T...       "
+printf "Build L4T...         "
 ./apply_binaries.sh > /dev/null 2>&1
 printf "[OK]\n"
 

@@ -28,6 +28,12 @@ fi
 
 printf "\e[32mBuild the image ...\n"
 
+# If root dir already exists, exit out
+if [ -d "$JETSON_BUILD_DIR" ]; then
+	printf "ERROR: build directory already exists at $JETSON_BUILD_DIR! Exiting..."
+	exit 1
+fi
+
 # Create the build dir if it does not exists
 mkdir -p $JETSON_BUILD_DIR
 
