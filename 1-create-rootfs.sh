@@ -16,9 +16,14 @@ if [ "x$(whoami)" != "xroot" ]; then
 fi
 
 # Check for env variables
-if [ ! $JETSON_ROOTFS_DIR ]; then
-	printf "\e[31mYou need to set the env variable \$JETSON_ROOTFS_DIR\e[0m\n"
+if [ ! $JETSON_REPO_DIR ]; then
+	printf "\e[31mError, JETSON_REPO_DIR is not set. Did you use sudo -E? Please review README.md\e[0m\n"
 	exit 1
+else
+	# shellcheck source=./include/functions.sh
+	source $JETSON_REPO_DIR/include/functions.sh
+	check_required_env_vars
+	board_validation
 fi
 
 # If root dir already exists, exit out
@@ -30,7 +35,10 @@ fi
 # Install prerequisites packages
 printf "\e[32mInstall the dependencies...     "
 apt-get update > /dev/null
-apt-get install --no-install-recommends -y qemu-user-static debootstrap binfmt-support coreutils parted wget gdisk e2fsprogs ansible > /dev/null
+apt-get install --no-install-recommends -y qemu-user-static debootstrap \
+	binfmt-support coreutils parted wget gdisk e2fsprogs ansible \
+	build-essential libncurses-dev bison flex libssl-dev libelf-dev \
+	gcc-aarch64-linux-gnu > /dev/null
 printf "[OK]\n"
 
 # Create rootfs directory

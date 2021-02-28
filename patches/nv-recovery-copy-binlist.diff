@@ -30,3 +30,27 @@
 > R32x:<ROOTFS>/lib/<ARCH>/libreadline.so.8:/lib/libreadline.so.8
 180d179
 < R32x:<ROOTFS>/usr/lib/<ARCH>/libcrypto.so.1.0.0:/lib/<ARCH>/libcrypto.so.1.0.0
+206,216c205,215
+< all:<ROOTFS>/sbin/wpa_supplicant:/sbin/wpa_supplicant
+< all:<ROOTFS>/etc/wpa_supplicant.conf:/etc/wpa_supplicant.conf
+< all:<ROOTFS>/etc/wpa_supplicant/action_wpa.sh:/etc/wpa_supplicant/action_wpa.sh
+< all:<ROOTFS>/etc/wpa_supplicant/functions.sh:/etc/wpa_supplicant/functions.sh
+< all:<ROOTFS>/etc/wpa_supplicant/ifupdown.sh:/etc/wpa_supplicant/ifupdown.sh
+< all:<ROOTFS>/lib/firmware/brcm/fw_bcmdhd.bin:/lib/firmware/brcm/fw_bcmdhd.bin
+< all:<ROOTFS>/lib/firmware/brcm/nvram.txt:/lib/firmware/brcm/nvram.txt
+< R28:<ROOTFS>/lib/modules/<KERNEL_VERSION>/kernel/drivers/net/wireless/bcmdhd/bcmdhd.ko:/lib/modules/<KERNEL_VERSION>/kernel/drivers/net/wireless/bcmdhd/bcmdhd.ko
+< R32x:<ROOTFS>/lib/modules/<KERNEL_VERSION>/kernel/drivers/net/wireless/bcmdhd/bcmdhd.ko:/lib/modules/<KERNEL_VERSION>/kernel/drivers/net/wireless/bcmdhd/bcmdhd.ko
+< R32x:<ROOTFS>/lib/modules/<KERNEL_VERSION>/kernel/net/wireless/lib80211.ko:/lib/modules/<KERNEL_VERSION>/kernel/net/wireless/lib80211.ko
+< R32x:<ROOTFS>/lib/modules/<KERNEL_VERSION>/kernel/net/wireless/cfg80211.ko:/lib/modules/<KERNEL_VERSION>/kernel/net/wireless/cfg80211.ko
+---
+> #all:<ROOTFS>/sbin/wpa_supplicant:/sbin/wpa_supplicant
+> #all:<ROOTFS>/etc/wpa_supplicant.conf:/etc/wpa_supplicant.conf
+> #all:<ROOTFS>/etc/wpa_supplicant/action_wpa.sh:/etc/wpa_supplicant/action_wpa.sh
+> #all:<ROOTFS>/etc/wpa_supplicant/functions.sh:/etc/wpa_supplicant/functions.sh
+> #all:<ROOTFS>/etc/wpa_supplicant/ifupdown.sh:/etc/wpa_supplicant/ifupdown.sh
+> #all:<ROOTFS>/lib/firmware/brcm/fw_bcmdhd.bin:/lib/firmware/brcm/fw_bcmdhd.bin
+> #all:<ROOTFS>/lib/firmware/brcm/nvram.txt:/lib/firmware/brcm/nvram.txt
+> #R28:<ROOTFS>/lib/modules/<KERNEL_VERSION>/kernel/drivers/net/wireless/bcmdhd/bcmdhd.ko:/lib/modules/<KERNEL_VERSION>/kernel/drivers/net/wireless/bcmdhd/bcmdhd.ko
+> #R32x:<ROOTFS>/lib/modules/<KERNEL_VERSION>/kernel/drivers/net/wireless/bcmdhd/bcmdhd.ko:/lib/modules/<KERNEL_VERSION>/kernel/drivers/net/wireless/bcmdhd/bcmdhd.ko
+> #R32x:<ROOTFS>/lib/modules/<KERNEL_VERSION>/kernel/net/wireless/lib80211.ko:/lib/modules/<KERNEL_VERSION>/kernel/net/wireless/lib80211.ko
+> #R32x:<ROOTFS>/lib/modules/<KERNEL_VERSION>/kernel/net/wireless/cfg80211.ko:/lib/modules/<KERNEL_VERSION>/kernel/net/wireless/cfg80211.ko
