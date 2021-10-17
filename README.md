@@ -2,7 +2,7 @@
 
 Scripts to aid in generating Ubuntu images for Nvidia Jetson boards. Currently only tested with the Jetson Nano, and Jetson AGX Xavier.
 
-Currently this builds Ubuntu 20.04 images using the L4T R32.5.1 BSP.
+Currently this builds Ubuntu 20.04 images using the L4T R32.6.1 BSP.
 
 ## Usage Instructions
 
