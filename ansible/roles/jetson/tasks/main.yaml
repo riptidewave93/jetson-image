@@ -40,12 +40,13 @@
     - libffi6
     - libncursesw5
     - libpython3-stdlib
-    - libpython3.8-minimal
-    - libpython3.8-stdlib
+    - libpython3.10-minimal
+    - libpython3.10-stdlib
     - libreadline8
     - libtinfo5
     - python3-minimal
-    - python3.8
+    - python3.10
+    - python3-pip
     - libglvnd0
     - libdrm-common
     - libdrm2
@@ -62,13 +63,12 @@
     - libxshmfence1
     - libpython2-stdlib
     - python2
-    - python2-minimal
-    - python-is-python2
     - libgstreamer1.0-0
     - libgstreamer-plugins-bad1.0-0
     - libpangocairo-1.0-0
     - libprocps-dev
     - parted
+    - libasound2
 
 - name: Install core packages
   apt:
@@ -88,6 +88,7 @@
     - kmod
     - linux-firmware
     - locales
+    - nano
     - net-tools
     - netplan.io
     - pciutils
@@ -131,13 +132,3 @@
     create_home: yes
     groups: sudo
     state: present
-
-- name: Download pip
-  get_url:
-    url: https://bootstrap.pypa.io/get-pip.py
-    dest: /tmp/get-pip.py
-
-- name: Install pip
-  shell: python3 /tmp/get-pip.py --user
-  become: yes
-  become_user: "{{ new_user.name }}"

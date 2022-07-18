@@ -1,5 +1,5 @@
 ---
-ubuntu_release: focal
+ubuntu_release: jammy
 
 new_user:
   name: jetson
