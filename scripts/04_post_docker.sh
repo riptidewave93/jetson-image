@@ -38,11 +38,14 @@ if [ -z "$MLKERNEL" ]; then
   fi
 fi
 patch $JETSON_BUILD_DIR/Linux_for_Tegra/nv_tegra/nv-apply-debs.sh < $JETSON_REPO_DIR/patches/l4t/nv-apply-debs.diff > /dev/null
-cp $JETSON_REPO_DIR/patches/l4t/python-jetson-gpio_2.0.17_arm64.deb-patched $JETSON_BUILD_DIR/Linux_for_Tegra/tools/python-jetson-gpio_2.0.17_arm64.deb
+rm $JETSON_BUILD_DIR/Linux_for_Tegra/tools/python-jetson-gpio_2.0.17_arm64.deb # Be gone old cruft
 if [ "$BSP_VERSION" == "t186" ]; then
   # AGX needs a few more
   patch $JETSON_BUILD_DIR/Linux_for_Tegra/tools/ota_tools/version_upgrade/ota_make_recovery_img_dtb.sh < $JETSON_REPO_DIR/patches/l4t/nv-fixup-ota_make_recovery_img_dtb.diff > /dev/null
   patch $JETSON_BUILD_DIR/Linux_for_Tegra/tools/ota_tools/version_upgrade/recovery_copy_binlist.txt < $JETSON_REPO_DIR/patches/l4t/nv-recovery-copy-binlist.diff > /dev/null
+else
+  # Nano
+  cp $JETSON_REPO_DIR/patches/l4t/python-jetson-gpio_2.0.17_arm64.deb-patched $JETSON_BUILD_DIR/Linux_for_Tegra/tools/python-jetson-gpio_2.0.17_arm64.deb
 fi
 printf "[OK]\n"
 

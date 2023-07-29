@@ -2,7 +2,12 @@
 
 Scripts to aid in generating Ubuntu images for Nvidia Jetson boards. Currently only tested with the Jetson Nano, and Jetson AGX Xavier.
 
-Currently this builds Ubuntu 22.04 images using the L4T R32.7.2 BSP.
+Currently this builds Ubuntu 22.04 images using the latest BSP available at the time of last commit.
+
+The BSPs in use are below:
+
+Jetson-Nano: R32.7.2
+Jetson-AGX-Xavier: R35.3.1
 
 ## Usage Instructions
 

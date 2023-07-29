@@ -61,7 +61,7 @@ function board_validation {
     agx_xavier_mainline)
       printf "\e[31mWarning: Board $JETSON_BOARD is HIGHLY EXPERIMENTAL and many things do not work!\e[0m\n"
       board_bsp_exports t186
-      export MLKERNEL=https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/snapshot/linux-5.18.y.tar.gz
+      export MLKERNEL=https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/snapshot/linux-6.4.y.tar.gz
       ;;
     *)
       error_msg "Board $JETSON_BOARD is unsupported!"
@@ -82,7 +82,7 @@ function board_bsp_exports {
     t210)
       # Nano
       export BSP_VERSION=t210
-      export BSP=https://developer.nvidia.com/embedded/l4t/r32_release_v7.2/t210/jetson-210_linux_r32.7.2_aarch64.tbz2
+      export BSP=https://developer.download.nvidia.com/embedded/L4T/r35_Release_v3.1/release/Jetson_Linux_R35.3.1_aarch64.tbz2
       ;;
     *)
       error_msg "Invalid input to board_bsp_exports!"
